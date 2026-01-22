@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Shell script to check which remote branches can be cherry-picked successfully with a given commit ID
-# Usage: ./cherry-pick-checker. sh <commit-id>
+# Usage: ./cherry_pickable.sh <commit-id>
 
 # Check if commit ID is provided
 if [ -z "$1" ]; then
