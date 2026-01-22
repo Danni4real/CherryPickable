@@ -28,10 +28,15 @@ echo "========================="
 echo "cherry-pickable branches:"
 
 while IFS= read -r BRANCH; do
-    # Skip empty branch or original branch
-    if [ -z "$BRANCH" ] || [ "$BRANCH" = "origin/$ORIGINAL_BRANCH" ]; then
+    # Skip empty branch
+    if [ -z "$BRANCH" ]; then
         continue
     fi
+
+    # Skip original branch
+    #if [ "$BRANCH" = "origin/$ORIGINAL_BRANCH" ]; then
+    #    continue
+    #fi
 
     # Create a unique temporary branch for each iteration
     TEMP_BRANCH="temp_cherry_pick_test_$$_${RANDOM}"
